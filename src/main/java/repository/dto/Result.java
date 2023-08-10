@@ -4,23 +4,19 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 public class Result {
-    private String title;
+
+
     private String kind;
-    public String id;
-    public String etag;
+    private String id;
+    private String etag;
+    private String selfLink;
+    private volumeInfo volumeInfo;
+
     @JsonAlias("contributor")
     private List<String> authors;
 
     @JsonAlias("id")
     private String link;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public String getKind() {
         return kind;
@@ -37,11 +33,28 @@ public class Result {
     public void setId(String id) {
         this.id = id;
     }
+
     public String getETag() {
         return etag;
     }
 
     public void setEtag(String etag) {
         this.etag = etag;
+    }
+
+    public String getSelfLink() {
+        return selfLink;
+    }
+
+    public void setSelfLink(String selfLink) {
+        this.selfLink = selfLink;
+    }
+
+    public void setVolumeInfo(repository.dto.volumeInfo volumeInfo) {
+        this.volumeInfo = volumeInfo;
+    }
+
+    public repository.dto.volumeInfo getVolumeInfo() {
+        return volumeInfo;
     }
 }
