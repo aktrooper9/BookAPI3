@@ -8,7 +8,7 @@ public class LocRepository {
 
     private final WebClient webClient;
 
-    private static final String baseUrl = "https://www.googleapis.com/books/v1"; //I am 100% sure that this is not correct
+    private static final String baseUrl = "https://www.googleapis.com/books/v1/volumes?q=search+terms"; //I am 100% sure that this is not correct
     private final String yourAPIKey="AIzaSyCmNoIcMptf7SBUj-m5iCuKkod8AU2eDXw" ;
 
     public LocRepository() {
@@ -24,6 +24,7 @@ public class LocRepository {
                 .uri(uriBuilder -> uriBuilder
                         .queryParam("query", query)
                         .queryParam("intitle", query)
+                        .queryParam("inauthor", query)
                         .queryParam("apiKey",yourAPIKey)
 
                         .build()
