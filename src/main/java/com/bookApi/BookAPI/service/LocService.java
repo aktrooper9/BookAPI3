@@ -1,7 +1,8 @@
-package service;
+package com.bookApi.BookAPI.service;
 
+import com.bookApi.BookAPI.dto.items;
 import org.springframework.stereotype.Service;
-import repository.LocRepository;
+import com.bookApi.BookAPI.repository.LocRepository;
 
 @Service
 public class LocService {
@@ -11,7 +12,7 @@ public class LocService {
         this.locRepository = locRepository;
     }
 
-    public String getResults(String query){
+    public items getResults(String query){
         return locRepository.getResults(query);
     }
 

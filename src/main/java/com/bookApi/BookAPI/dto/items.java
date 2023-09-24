@@ -1,8 +1,9 @@
-package repository.dto;
+package com.bookApi.BookAPI.dto;
 
 public class items {
     private String kind;
-    private Result items;
+    private int totalItems;
+    private Result[] items;
 
     public String getKind() {
         return kind;
@@ -12,11 +13,11 @@ public class items {
         this.kind = kind;
     }
 
-    public Result getItems() {
+    public Result[] getItems() {
         return items;
     }
 
-    public void setItems(Result items) {
+    public void setItems(Result[] items) {
         this.items = items;
     }
 }

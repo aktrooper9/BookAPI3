@@ -1,5 +1,6 @@
-package repository;
+package com.bookApi.BookAPI.repository;
 
+import com.bookApi.BookAPI.dto.items;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -15,11 +16,10 @@ public class LocRepository {
         webClient = WebClient
                 .builder()
                 .baseUrl(baseUrl)
-                .baseUrl(baseUrl)
                 .build();
     }
 
-    public String getResults(String query) {
+    public items getResults(String query) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
                         .queryParam("query", query)
@@ -30,7 +30,7 @@ public class LocRepository {
                         .build()
                 )
                 .retrieve()
-                .bodyToMono(String.class)
+                .bodyToMono(items.class)
                 .block();
     }
 

@@ -1,8 +1,8 @@
-package repository.dto;
+package com.bookApi.BookAPI.dto;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Result {
 
 
@@ -50,11 +50,11 @@ public class Result {
         this.selfLink = selfLink;
     }
 
-    public void setVolumeInfo(repository.dto.volumeInfo volumeInfo) {
+    public void setVolumeInfo(com.bookApi.BookAPI.dto.volumeInfo volumeInfo) {
         this.volumeInfo = volumeInfo;
     }
 
-    public repository.dto.volumeInfo getVolumeInfo() {
+    public com.bookApi.BookAPI.dto.volumeInfo getVolumeInfo() {
         return volumeInfo;
     }
 }

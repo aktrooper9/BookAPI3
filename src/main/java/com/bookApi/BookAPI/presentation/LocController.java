@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
-import repository.dto.Result;
-import service.LocService;
+import com.bookApi.BookAPI.dto.Result;
+import com.bookApi.BookAPI.service.LocService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -29,8 +30,9 @@ public class LocController {
             @ApiResponse(responseCode = "200", description = "Result(s) found"),
             @ApiResponse(responseCode = "404", description = "Result(s) not found")
     })
-    public String getResults(@RequestParam(value = "q") String query) {
-        List<Result> results = locService.getResults(query);
+    public List<Result> getResults(@RequestParam(value = "q") String query) {
+        //List<Result> results = locService.getResults(query); // fix the LocService method to return an array, run it multiple times??
+        List<Result> results = new ArrayList<Result>();  // placeholder code
         if(CollectionUtils.isEmpty(results)){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Result(s) not found.");
         }
