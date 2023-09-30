@@ -2,8 +2,12 @@ package presentation;
 import com.bookApi.BookAPI.presentation.HomeController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
 
 import static org.junit.jupiter.api.Assertions.*;
+@CrossOrigin
+@RestController
 public class HomeControllerTest {
     private HomeController homeController;
 
