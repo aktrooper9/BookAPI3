@@ -2,8 +2,11 @@ package com.bookApi.BookAPI.repository;
 
 import com.bookApi.BookAPI.dto.ResultList;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
-
+@CrossOrigin
+@RestController
 @Repository
 public class LocRepository {
 
