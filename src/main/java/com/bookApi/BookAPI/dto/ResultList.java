@@ -1,6 +1,6 @@
 package com.bookApi.BookAPI.dto;
 
-public class items {
+public class ResultList {
     private String kind;
     private int totalItems;
     private Result[] items;
